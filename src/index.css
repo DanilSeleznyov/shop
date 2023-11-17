@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Montserrat', sans-serif;
+  background: #fff;
+  color: #222;
+  font-weight: 400;
+}
+.app_wrapper{
+  min-width: 1200px;
+  width: 100%;
+  margin: 50px auto;
+  padding: 0 150px;
+}
+
+.header_wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+header .logo{
+  font-size: 40px;
+  font-weight: 600;
+}
+
+header .presentation{
+  margin: 50px 0;
+  background: url('../public/img/francesca-tosolini-tHkJAMcO3QE-unsplash.jpg') no-repeat center center / cover;
+  background-blend-mode: multiply;
+  background-color: #8d8d8d;
+  width: 100%;
+  height: 500px;
+  position: relative;
+}
+
+header .presentation::after{
+  content: 'Найкращі товари для вашого будинка';
+  position: absolute;
+  top: 100px;
+  left: 50px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: 600;
+  width: 350px;
+}
+
+header .presentation::before{
+  content: 'За низькими цінами';
+  position: absolute;
+  top: 250px;
+  left: 50px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 300;
+  width: 350px;
+}
+
+.nav__list{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  gap: 30px;
+}
+
+.nav__list li{
+  cursor: pointer;
+  transition: opacity 0.5s ease;
+}
+
+.nav__list li:hover{
+  opacity: 0.5;
+}
+
+.header__cart{
+  cursor: pointer;
+  transition: color, transform 0.5s ease;
+}
+
+.header__cart:hover,
+.header__cart:active{
+  color: #dc3d3d;
+  transform: scale(1.25);
+}
+
+.shop__cart{
+  position: absolute;
+  width: 450px;
+  min-height: 100px;
+  background: #fafafa;
+  top: 60px;
+  right: 0;
+  z-index: 100;
+  -webkit-box-shadow: 0px 0px 10px 0px #000000;
+  box-shadow: 0px 0px 10px 0px #000000;
+  padding: 20px;
+}
+
+.title__empty{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.cart_orders{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.delete__icon{
+  cursor: pointer;
+  font-size: 24px;
+  transition: color, transform 0.5s ease;
+}
+
+.delete__icon:hover{
+  color: #dc3d3d;
+  transform: scale(1.25);
+}
+
+header .shop__cart .item{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+header .shop__cart .item__text{
+  width: 100%;
+}
+
+header .shop__cart .item h2{
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+header .shop__cart .item img{
+  width: 120px;
+}
+
+.sum{
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.footer{
+  margin: 50px auto;
+  text-align: center;
+}
+
+.main{
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.main .item{
+  background: #f5f5f5;
+  width: 30%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 16px 16px 0 0;
+
+}
+
+.main .item img{
+  width: 100%;
+  height: 350px;
+  border-radius: 16px 16px 0 0;
+  transition: all 0.5s ease;
+}
+
+.main .item img:hover{
+  transform: scale(1.05);
+}
+
+.main span, .main h2, .main p{
+  margin: 10px 20px;
+  color:#333;
+}
+
+.main span{
+  color:#5fa36a;
+  display: flex;
+  font-weight: 600;
+}
+
+.main .add__cart{
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ca5252;
+  border-radius: 50%;
+  font-weight: 600;
+  color: #fff;
+  transition: all 0.5s ease;
+}
+
+.main .add__cart:hover{
+  transform: scale(1.25) translate(-5px);
+}
+
+.categories{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.categories__block{
+  padding: 5px 10px;
+  background: #f2f2f2;
+  border-radius: 30px;
+  border: 1px solid transparent;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.categories__block:hover{
+  border-color: silver;
+  transform: scale(1.1);
+}
+
+.full__item{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  overflow: auto;
+}
+
+.modal__card{
+  position: relative;
+  width: 600px;
+  padding: 20px 30px;
+  background: #fff;
+  margin: 10% auto;
+  border-radius: 24px;
+}
+
+.modal__card img{
+  width: 100%;
+  border-radius: 16px;
+}
